@@ -56,6 +56,20 @@ build CMakeFiles/output.dir/main.c.obj: C_COMPILER__output_unscanned_Debug C$:/U
   OBJECT_DIR = CMakeFiles\output.dir
   OBJECT_FILE_DIR = CMakeFiles\output.dir
 
+build CMakeFiles/output.dir/mathlib.c.obj: C_COMPILER__output_unscanned_Debug C$:/Users/shach/Desktop/A_1/part_5/mathlib.c || cmake_object_order_depends_target_output
+  DEP_FILE = CMakeFiles\output.dir\mathlib.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/shach/Desktop/A_1/part_5/.
+  OBJECT_DIR = CMakeFiles\output.dir
+  OBJECT_FILE_DIR = CMakeFiles\output.dir
+
+build CMakeFiles/output.dir/advmath.c.obj: C_COMPILER__output_unscanned_Debug C$:/Users/shach/Desktop/A_1/part_5/advmath.c || cmake_object_order_depends_target_output
+  DEP_FILE = CMakeFiles\output.dir\advmath.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/shach/Desktop/A_1/part_5/.
+  OBJECT_DIR = CMakeFiles\output.dir
+  OBJECT_FILE_DIR = CMakeFiles\output.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target output
@@ -64,7 +78,7 @@ build CMakeFiles/output.dir/main.c.obj: C_COMPILER__output_unscanned_Debug C$:/U
 #############################################
 # Link the executable output.exe
 
-build output.exe: C_EXECUTABLE_LINKER__output_Debug CMakeFiles/output.dir/main.c.obj
+build output.exe: C_EXECUTABLE_LINKER__output_Debug CMakeFiles/output.dir/main.c.obj CMakeFiles/output.dir/mathlib.c.obj CMakeFiles/output.dir/advmath.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\output.dir

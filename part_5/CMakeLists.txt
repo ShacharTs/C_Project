@@ -10,6 +10,9 @@ set(CMAKE_C_STANDARD 11)
 # Add the source files
 set(SOURCES
         main.c
+        libmathlib.a
+        mathlib.c
+        advmath.c
 )
 
 # Add the executable
