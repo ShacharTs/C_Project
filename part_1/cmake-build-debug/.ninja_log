@@ -1,0 +1,4 @@
+# ninja log v6
+6	90	7545074989160085	CMakeFiles/output.dir/main.c.obj	9ac72b62fafbc1e5
+13	105	7545074989232055	CMakeFiles/output.dir/other.c.obj	175000480c883741
+105	286	7545074990146670	output.exe	f606b8b2294d1a81

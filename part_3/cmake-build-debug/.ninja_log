@@ -1,0 +1,5 @@
+# ninja log v6
+30	152	7545075980835533	CMakeFiles/output.dir/mathlib.c.obj	800265961f30a06a
+7	155	7545075980733346	CMakeFiles/output.dir/main.c.obj	3153649f9a1d11e5
+156	377	7545075982089730	output.exe	bcc03049ee25ad9f
+12	346	7545195535755410	build.ninja	5fa9ddc06f8704c6
