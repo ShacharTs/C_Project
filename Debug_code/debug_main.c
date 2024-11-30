@@ -4,7 +4,7 @@
 float square_root(int num){
     float x = num;
     float y = 1;
-    float epsilon = 0.000001;
+    const float epsilon = 0.000001;
     while (x - y > epsilon){
         x = (x + y) / 2;
         y = num / x;
@@ -28,8 +28,8 @@ void bug1(){
 
 void bug2(){
     const int squares[] = {1, 4, 9, 16, 25};
-    float results[5];
-    size_t size = sizeof(squares) / sizeof(squares[0]);
+    int results[5];
+    const size_t size = sizeof(squares) / sizeof(squares[0]);
     for (int i = 0; i < size; i++){
         results[i] = square_root(squares[i]);
         if (results[i] * results[i] != squares[i]){
