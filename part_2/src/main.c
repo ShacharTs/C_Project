@@ -1,8 +1,6 @@
-#include <stdio.h>
 #include <character.h>
 
-int main()
-{
+int main(){
     const char *hero_name = "Bob";
 
     say_hello(hero_name);

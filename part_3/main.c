@@ -3,8 +3,8 @@
 
 
 int main() {
-     int a = 10;
-     int b = 5;
+     const int a = 10;
+     const int b = 5;
     
     printf("Math operations with %d and %d:\n", a, b);
     printf("Addition: %d\n", add(a, b));

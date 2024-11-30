@@ -3,7 +3,7 @@
 
 int main(){
     // Test double_number
-    int result = double_number(7);
+    const int result = double_number(7);
     printf("Double of 7 is: %d\n", result);
 
     // Test animal noises

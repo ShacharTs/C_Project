@@ -4,7 +4,7 @@ output: main.o other.o
 main.o: main.c
 	g++ -c main.c
 
-other.o: other.c other.h
+other.o: other.c
 	g++ -c other.c
 
 clean:
