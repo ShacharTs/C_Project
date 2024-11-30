@@ -1,6 +1,7 @@
 #ifndef OTHER_H
 #define OTHER_H
 
+#include <string.h>
 
 
 int double_number(int x);

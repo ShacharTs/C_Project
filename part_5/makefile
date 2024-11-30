@@ -1,22 +1,37 @@
 
+CC = gcc
+CFLAGS = -Wall -I../part_3 -I../part_4
+LDFLAGS = -L../part_3 -L../part_4 -lmathlib -ladvmath -lm
 
-all: main.o libmathlib.a advmath.dll
-		gcc main.o -L. -lmathlib -ladvmath -o main.exe
 
-libmathlib.a: mathlib.o
-		ar rcs libmathlib.a mathlib.o
+OUTPUT = main.exe
 
-advmath.dll: advmath.o
-		gcc -shared -o advmath.dll advmath.o
 
-main.o: main.c mathlib.h advmath.h
-		gcc -c main.c -o main.o
+SRCS = main.c
+OBJS = $(SRCS:.c=.o)
 
-mathlib.o: mathlib.c mathlib.h
-		gcc -c mathlib.c -o mathlib.o
 
-advmath.o: advmath.c advmath.h
-		gcc -c advmath.c -o advmath.o
+all: $(OUTPUT)
 
+# Link the final executable
+$(OUTPUT): $(OBJS) ../part_3/libmathlib.a ../part_4/libadvmath.dll
+	$(CC) $(OBJS) $(LDFLAGS) -o $(OUTPUT)
+	copy ..\part_4\libadvmath.dll .
+
+# Compile Source Files into Object Files
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+# Build Static Library in part_3
+../part_3/libmathlib.a:
+	$(MAKE) -C ../part_3
+
+# Build Dynamic Library in part_4
+../part_4/libadvmath.dll:
+	$(MAKE) -C ../part_4
+
+# Clean Up
 clean:
-		del /Q *.o
+	del /Q *.o *.exe libadvmath.dll
+	$(MAKE) -C ../part_3 clean
+	$(MAKE) -C ../part_4 clean

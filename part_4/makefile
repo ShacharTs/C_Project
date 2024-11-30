@@ -1,33 +1,32 @@
-# Define the compiler and flags
+
 CC = gcc
-FLAGS = -Wall
+# Include current directory for headers
+CFLAGS = -Wall -I.
+# Linker flags: shared library and math library
+LDFLAGS = -L. -ladvmath -lm
 
-# Main target: Build everything
-all: prog
+all: main
 
-# Build the final executable "prog.exe"
-prog: main.o libadvmath.dll
-	$(CC) main.o -L. -ladvmath -lm -o prog.exe
-# -L. tells the compiler to look for the shared library in the current directory
-# -ladvmath links with libadvmath.dll
+# Build the final executable
+main: main.o libadvmath.dll
+	echo "Linking object files"
+	$(CC) main.o $(LDFLAGS) -o main.exe
+	$(CC) main.o $(LDFLAGS) -o main.out
 
-# Compile "main.c" into an object file "main.o"
-main.o: main.c
-	$(CC) $(FLAGS) -c main.c
-
-# Create the shared library "libadvmath.dll" from "advmath.o"
+# Create the shared library
 libadvmath.dll: advmath.o
-	$(CC) $(FLAGS) -shared -o libadvmath.dll advmath.o
-# -shared creates a shared library (DLL)
+	echo "Creating shared library 'libadvmath.dll'"
+	$(CC) -shared -o libadvmath.dll advmath.o
 
-# Compile "advmath.c" into an object file "advmath.o"
+# Compile main.c into main.o
+main.o: main.c
+	echo "Compiling main.c"
+	$(CC) $(CFLAGS) -c main.c -o main.o
+
+# Compile advmath.c into advmath.o
 advmath.o: advmath.c
-	$(CC) $(FLAGS) -lm -c advmath.c -o advmath.o
-# -lm links the math library when compiling this file
+	echo "Compiling advmath.c"
+	$(CC) $(CFLAGS) -c advmath.c -o advmath.o
 
-# Clean up all generated files
 clean:
-	rm -f prog.exe main.o advmath.o libadvmath.dll
-
-# Mark "all" and "clean" as "phony" targets
-.PHONY: all clean
+	del /Q *.o *.exe *.out *.dll

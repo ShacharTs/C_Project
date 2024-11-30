@@ -1,30 +1,30 @@
-# Compiler and Flags
-CC = gcc
-CFLAGS = -IInclude -Wall -Wextra
 
-# Directories
+CC = gcc
+CFLAGS = -IInclude -Wall
+
 SRC_DIR = src
-INCLUDE_DIR = Include
 
 # Source and Object Files
-SRCS = $(SRC_DIR)/main.c $(SRC_DIR)/armor.c $(SRC_DIR)/character.c $(SRC_DIR)/shiny.c
+SRCS = $(wildcard src/*.c)
 OBJS = $(SRCS:.c=.o)
 
-# Output Binary
 OUTPUT = main
 
-# Default Target
 all: $(OUTPUT)
 
-# Link Object Files
 $(OUTPUT): $(OBJS)
-	$(CC) $(OBJS) -o $(OUTPUT)
+	echo "Linking object files"
+	$(CC) $(OBJS) -o $(OUTPUT).exe
+	$(CC) $(OBJS) -o $(OUTPUT).out
 
-# Compile Source Files into Object Files
-$(SRC_DIR)/%.o: $(SRC_DIR)/%.c $(INCLUDE_DIR)/%.h
+
+$(SRC_DIR)/%.o: $(SRC_DIR)/%.c
+	echo "Compiling all source files to object files"
 	$(CC) $(CFLAGS) -c $< -o $@
 
 # Clean Up
 clean:
-	del /Q $(SRC_DIR)\*.o $(OUTPUT)
+	del /Q $(SRC_DIR)\*.o
+	del /Q *.o *.exe *.out
+
 

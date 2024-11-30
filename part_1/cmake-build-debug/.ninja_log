@@ -1,7 +1,0 @@
-# ninja log v6
-6	90	7545074989160085	CMakeFiles/output.dir/main.c.obj	9ac72b62fafbc1e5
-13	105	7545074989232055	CMakeFiles/output.dir/other.c.obj	175000480c883741
-105	286	7545074990146670	output.exe	f606b8b2294d1a81
-9	82	7546830161869829	CMakeFiles/output.dir/main.c.obj	8c06cd76a389ae3e
-14	88	7546830161919838	CMakeFiles/output.dir/other.c.obj	467954d4d1d260e4
-89	217	7546830162669865	output.exe	a551553be5cdd1d4

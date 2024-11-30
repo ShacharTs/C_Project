@@ -3,7 +3,5 @@
 #define ADVMATH_H
 
 float average(int arr[], int size);
-float power(int base, int exp);
-float square_root(int number);
-int factorial(int number);
+// add the rest of the functions (headers only)
 #endif
