@@ -1,7 +1,9 @@
-// advmath.h
 #ifndef ADVMATH_H
 #define ADVMATH_H
 
 float average(int arr[], int size);
-// add the rest of the functions (headers only)
+float power(int base, int exp);
+float square_root(int number);
+int factorial(int number);
+
 #endif

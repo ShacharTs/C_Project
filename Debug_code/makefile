@@ -2,11 +2,11 @@ CC = gcc
 CFLAGS = -Wall -g # -g flag is used to enable debugging information
 
 
-all: program
+all: main
 
-program : debug_main.o
+main : debug_main.o
 	$(CC) $^ -o $@ -lm
 
 
 clean:
-	rm -f *.o program
+	del /Q *.o *.exe

@@ -1,7 +1,9 @@
 // main.c
 #include <stdio.h>
-#include "../part_3/mathlib.h"
-#include "../part_4/advmath.h"
+// #include "../part_3/mathlib.h"
+//#include "../part_4/advmath.h"
+#include "mathlib.h"
+#include "advmath.h"
 
 int main() {
     int a = 10, b = 5;
